@@ -26,6 +26,8 @@ In order to run docker smoothly, it is best to prevent permissions issues
 associated with the root file system. Running docker as user on the host is to
 ensure the ownership of files written during the container execution.
 
+Docker memory usage must be increased to run. We recommend at least 12GB.
+
 A ``docker`` container can be created using the following command::
 
     $ docker run -ti --rm \
@@ -37,7 +39,7 @@ A ``docker`` container can be created using the following command::
 
 For example: ::
 
-    $ docker run -ti -m 12GB --rm \
+    $ docker run -ti --rm \
         -v $HOME/ds000240:/data:ro \
         -v $HOME/ds000240/derivatives:/out \
         -v $HOME/tmp/ds000240-workdir:/work \
